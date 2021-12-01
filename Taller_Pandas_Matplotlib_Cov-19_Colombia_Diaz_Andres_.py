@@ -284,3 +284,8 @@ print(f'Lista de porcentajes por atencion en toda Colombia: '
 print('Gráfica (Bar): Tipo de Atención en toda Colombia')
 bar_atencion = data.groupby(
     'Ubicación del caso').size().sort_values().plot(kind='bar')
+
+# 33. Haga un gráfico de barras por Sexo de toda Colombia
+
+print('Gráfica (Bar): Sexo afectado en toda Colombia')
+bar_sexo = data.groupby('Sexo').size().sort_values().plot(kind='bar')
