@@ -156,3 +156,8 @@ data.groupby(['Sexo', 'Nombre departamento', 'Nombre municipio'])[
 
 print('Número de contagiados por país de procedencia (De mayor a menor)')
 data['Nombre del país'].value_counts()
+
+# 21. Liste de mayor a menor las fechas donde se presentaron mas contagios
+
+print('Fechas con mayor contagio (De mayor a menor)')
+data['Fecha de notificación'].value_counts()
