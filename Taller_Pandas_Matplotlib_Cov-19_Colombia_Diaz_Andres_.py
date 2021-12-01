@@ -203,3 +203,11 @@ tasa_recuper_municipio = (data[data['Recuperado'] == 'Recuperado'].groupby(
 
 print(f'Lista de tasa de mortalidad por ciudad: {tasa_mortalidad_municipio}')
 print(f'\n Lista de tasa de recuperación por ciudad: {tasa_recuper_municipio}')
+
+# 25. Liste por cada ciudad la cantidad de personas por atención
+
+tipo_atencion = data[data['Ubicación del caso'] != 'Fallecido']
+
+atencion_por_ciudad = tipo_atencion.groupby(
+    ['Nombre municipio', 'Ubicación del caso']).size().sort_values()
+print(f'Lista de ciudades y tipo de atención: {atencion_por_ciudad}')
