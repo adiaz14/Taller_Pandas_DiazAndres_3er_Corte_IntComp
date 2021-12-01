@@ -179,3 +179,16 @@ tasa_recuperacion = (recuperados/contagiados) * 1000
 
 print(f'Tasa de mortalidad en Colombia: {tasa_mortalidad}')
 print(f'Tasa de recuperación en Colombia: {tasa_recuperacion}')
+
+# 23. Liste la tasa de mortalidad y recuperación que tiene cada departamento
+
+tasa_mortalidad_depart = (data[data['Recuperado'] == 'fallecido'].groupby(
+    'Nombre departamento').size() / len(data)) * 100
+
+tasa_recuperacion_depart = (data[data['Recuperado'] == 'Recuperado'].groupby(
+    'Nombre departamento').size() / len(data)) * 100
+
+print(f'Lista de tasa de mortalidad por departamento: '
+      f'{tasa_mortalidad_depart} \n')
+print(f'Lista de tasa de recuperación por departamento: '
+      f'{tasa_recuperacion_depart}')
