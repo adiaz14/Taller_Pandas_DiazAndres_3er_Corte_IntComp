@@ -296,3 +296,18 @@ print('Gráfica (Bar): Tipo de contagio en toda Colombia')
 
 bar_tipo_contagio = data.groupby(
     'Tipo de contagio').size().sort_values().plot(kind='bar')
+
+# 35. Haga un gráfico de barras del número de contagiados, recuperados y
+# fallecidos por fecha de toda Colombia
+
+print('Gráfico (Bar): Número de contagios por fecha en toda Colombia')
+bar_contagios_fecha = data.groupby(
+    'Fecha de diagnóstico').size().sort_values().plot(kind='bar')
+
+print('Gráfico (Bar): Número de fallecidos por fecha en toda Colombia')
+bar_fallecidos_fecha = data[data['Recuperado'] == 'fallecido'].groupby(
+    'Fecha de diagnóstico').size().sort_values().plot(kind='bar')
+
+print('Gráfico (Bar): Número de recuperados por fecha en toda Colombia')
+bar_recuperados_fecha = data[data['Recuperado'] == 'Recuperado'].groupby(
+    'Fecha de diagnóstico').size().sort_values().plot(kind='bar')
