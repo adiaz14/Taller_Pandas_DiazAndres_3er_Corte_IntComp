@@ -249,3 +249,18 @@ print('Gráfica: Curva de recuperados en los 10 departamentos con mas '
       'recuperados')
 recuperados_top_10_dept = data[data['Recuperado'] == 'Recuperado'].groupby(
     'Nombre departamento').size().sort_values(ascending=False).head(10).plot()
+
+# 29. Grafique las curvas de contagio, muerte y recuperación de las 10
+# ciudades con mas casos de contagiados acumulados
+
+print('Gráfica: Curva de contagio en los 10 ciudades con mas casos')
+contagios_top_10_ciudad = data.groupby('Nombre municipio').size(
+).sort_values(ascending=False).head(10).plot()
+
+print('Gráfica: Curva de fallecidos en los 10 ciudades con mas fallecidos')
+fallecidos_top_10_ciudad = data[data['Recuperado'] == 'fallecido'].groupby(
+    'Nombre municipio').size().sort_values(ascending=False).head(10).plot()
+
+print('Gráfica: Curva de recuperados en los 10 ciudades con mas recuperados')
+recuperados_top_10_ciudad = data[data['Recuperado'] == 'Recuperado'].groupby(
+    'Nombre municipio').size().sort_values(ascending=False).head(10).plot()
