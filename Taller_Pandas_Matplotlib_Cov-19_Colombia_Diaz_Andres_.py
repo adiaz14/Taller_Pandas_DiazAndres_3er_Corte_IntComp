@@ -232,3 +232,20 @@ curva_fallecidos = data[data['Recuperado'] == 'fallecido'].groupby(
 print('Gráfico: curva de recuperados')
 curva_recuperados = data[data['Recuperado'] == 'Recuperado'].groupby(
     'Fecha de diagnóstico').size().sort_values().plot()
+
+# 28. Grafique las curvas de contagio, muerte y recuperación de los 10
+# departamentos con mas casos de contagiados acumulados
+
+print('Gráfica: Curva de contagio en los 10 departamentos con mas casos')
+contagios_top_10_dept = data.groupby('Nombre departamento').size(
+).sort_values(ascending=False).head(10).plot()
+
+print('Gráfica: Curva de fallecidos en los 10 departamentos con mas '
+      'fallecidos')
+fallecidos_top_10_dept = data[data['Recuperado'] == 'fallecido'].groupby(
+    'Nombre departamento').size().sort_values(ascending=False).head(10).plot()
+
+print('Gráfica: Curva de recuperados en los 10 departamentos con mas '
+      'recuperados')
+recuperados_top_10_dept = data[data['Recuperado'] == 'Recuperado'].groupby(
+    'Nombre departamento').size().sort_values(ascending=False).head(10).plot()
