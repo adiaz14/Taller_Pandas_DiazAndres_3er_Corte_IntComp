@@ -93,3 +93,8 @@ data['Ubicación del caso'].value_counts()
 print('Listar de mayor a menor por tipo de atención')
 tipo_atencion = data[data['Ubicación del caso'] != 'Fallecido']
 tipo_atencion.groupby(['Ubicación del caso']).size()
+
+# 11.Liste de mayor a menor los 10 departamentos con mas casos de contagiados
+
+print('Top 10 de departamentos con mayor casos de contagios')
+data['Nombre departamento'].value_counts().head(10)
