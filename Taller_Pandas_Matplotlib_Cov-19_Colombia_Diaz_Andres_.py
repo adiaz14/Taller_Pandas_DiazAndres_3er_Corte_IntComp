@@ -52,3 +52,9 @@ for municipio in nombre_municipios:
 data['Ubicación del caso'].value_counts()
 casos_casa = data[data['Ubicación del caso'] == 'Casa'].shape[0]
 print(f'Número de personas con atención en casa: {casos_casa}')
+
+# 5.Número de personas que se encuentran recuperados
+
+data['Recuperado'].value_counts()
+personas_recuperadas = data[data['Recuperado'] == 'Recuperado'].shape[0]
+print(f'Número de personas recuperadas: {personas_recuperadas}')
