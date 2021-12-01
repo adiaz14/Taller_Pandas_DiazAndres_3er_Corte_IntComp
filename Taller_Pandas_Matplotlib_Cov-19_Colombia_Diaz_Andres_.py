@@ -32,3 +32,8 @@ data.Sexo.replace('m', 'M', inplace=True)
 # 1. Número de casos de Contagiados en el País.
 
 print(f'Número de casos de contagiados en el país: {data.shape[0]}')
+
+# 2. Número de Municipios Afectados
+
+numero_municipios_afectados = len(data['Nombre municipio'].value_counts())
+print(f'Número de municipios afectados: {numero_municipios_afectados}')
