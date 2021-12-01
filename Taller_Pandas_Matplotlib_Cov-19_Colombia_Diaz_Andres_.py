@@ -85,3 +85,11 @@ print('Lista de departamentos afectados (sin repeticiones)')
 for departamento in nombre_departamentos:
     count += 1
     print(f'#{count}. {departamento}')
+
+# 10. Ordene de mayor a menor por tipo de atención
+
+data['Ubicación del caso'].value_counts()
+
+print('Listar de mayor a menor por tipo de atención')
+tipo_atencion = data[data['Ubicación del caso'] != 'Fallecido']
+tipo_atencion.groupby(['Ubicación del caso']).size()
