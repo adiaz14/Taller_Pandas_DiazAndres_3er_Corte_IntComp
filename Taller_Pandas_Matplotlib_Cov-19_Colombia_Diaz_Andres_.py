@@ -117,3 +117,10 @@ recuperados.groupby(['Nombre departamento']).size(
 
 print('Top 10 de municipios con mayor casos de contagios')
 data['Nombre municipio'].value_counts().head(10)
+
+# 15. Liste de mayor a menor los 10 municipios con mas casos de fallecidos
+
+print('Top 10 de municipios con mayor casos de fallecidos')
+fallecidos = data[data['Estado'] == 'Fallecido']
+fallecidos.groupby(['Nombre municipio']).size(
+).sort_values(ascending=False).head(10)
