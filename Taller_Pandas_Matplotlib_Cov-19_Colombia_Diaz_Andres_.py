@@ -289,3 +289,10 @@ bar_atencion = data.groupby(
 
 print('Gráfica (Bar): Sexo afectado en toda Colombia')
 bar_sexo = data.groupby('Sexo').size().sort_values().plot(kind='bar')
+
+# 34. Haga un gráfico de barras por tipo de toda Colombia
+
+print('Gráfica (Bar): Tipo de contagio en toda Colombia')
+
+bar_tipo_contagio = data.groupby(
+    'Tipo de contagio').size().sort_values().plot(kind='bar')
