@@ -211,3 +211,9 @@ tipo_atencion = data[data['Ubicación del caso'] != 'Fallecido']
 atencion_por_ciudad = tipo_atencion.groupby(
     ['Nombre municipio', 'Ubicación del caso']).size().sort_values()
 print(f'Lista de ciudades y tipo de atención: {atencion_por_ciudad}')
+
+# 26. Liste el promedio de edad por sexo por cada ciudad de contagiados
+
+avg_edad_sexo_ciudad = data.groupby(['Nombre municipio', 'Sexo']).Edad.mean()
+print(f'Lista de promedios de edad por sexo por cada ciudad de contagiados: '
+      f'{avg_edad_sexo_ciudad}')
