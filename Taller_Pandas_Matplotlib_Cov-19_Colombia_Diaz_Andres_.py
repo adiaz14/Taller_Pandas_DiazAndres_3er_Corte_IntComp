@@ -58,3 +58,8 @@ print(f'Número de personas con atención en casa: {casos_casa}')
 data['Recuperado'].value_counts()
 personas_recuperadas = data[data['Recuperado'] == 'Recuperado'].shape[0]
 print(f'Número de personas recuperadas: {personas_recuperadas}')
+
+# 6. Número de personas que ha fallecido
+
+personas_fallecidas = data[data.Estado == 'Fallecido'].shape[0]
+print(f'Número de personas fallecidas: {personas_fallecidas}')
