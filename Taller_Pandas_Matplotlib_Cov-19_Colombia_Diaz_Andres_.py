@@ -28,3 +28,7 @@ data['Ubicación del caso'].replace('CASA', 'Casa', inplace=True)
 
 data.Sexo.replace('f', 'F', inplace=True)
 data.Sexo.replace('m', 'M', inplace=True)
+
+# 1. Número de casos de Contagiados en el País.
+
+print(f'Número de casos de contagiados en el país: {data.shape[0]}')
