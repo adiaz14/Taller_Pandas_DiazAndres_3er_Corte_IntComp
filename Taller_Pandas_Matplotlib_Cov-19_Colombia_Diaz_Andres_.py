@@ -63,3 +63,10 @@ print(f'Número de personas recuperadas: {personas_recuperadas}')
 
 personas_fallecidas = data[data.Estado == 'Fallecido'].shape[0]
 print(f'Número de personas fallecidas: {personas_fallecidas}')
+
+# 7. Ordenar de Mayor a menor por tipo de caso (Importado, en estudio,
+# Relacionado)
+
+print('Listar de mayor a menor por tipo de caso (Importado, en estudio,'
+      'Relacionado)')
+data["Tipo de contagio"].value_counts()
