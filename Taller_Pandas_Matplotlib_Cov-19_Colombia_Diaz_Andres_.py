@@ -76,3 +76,12 @@ data['Nombre departamento'].value_counts()
 numero_departamentos_afectados = len(
     data['Nombre departamento'].value_counts())
 print(f'Número de departamentos afectados: {numero_departamentos_afectados}')
+
+# 9. Liste los departamentos afectados(sin repetirlos)
+
+nombre_departamentos = data['Nombre departamento'].unique()
+count = 0
+print('Lista de departamentos afectados (sin repeticiones)')
+for departamento in nombre_departamentos:
+    count += 1
+    print(f'#{count}. {departamento}')
