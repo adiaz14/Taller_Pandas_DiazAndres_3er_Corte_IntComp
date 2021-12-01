@@ -70,3 +70,9 @@ print(f'Número de personas fallecidas: {personas_fallecidas}')
 print('Listar de mayor a menor por tipo de caso (Importado, en estudio,'
       'Relacionado)')
 data["Tipo de contagio"].value_counts()
+
+# 8. Número de departamentos afectados
+data['Nombre departamento'].value_counts()
+numero_departamentos_afectados = len(
+    data['Nombre departamento'].value_counts())
+print(f'Número de departamentos afectados: {numero_departamentos_afectados}')
