@@ -143,3 +143,11 @@ data.groupby('Nombre departamento')['Nombre municipio'].value_counts()
 
 print('Número de Mujeres y hombres contagiados por ciudad por departamento')
 data.groupby(['Sexo', 'Nombre departamento', 'Nombre municipio']).size()
+
+# 19. Liste el promedio de edad de contagiados por hombre y mujeres por ciudad
+# por departamento
+
+print('Promedio de edad de contagiados por hombre y mujeres por ciudad '
+      'por departamento')
+data.groupby(['Sexo', 'Nombre departamento', 'Nombre municipio'])[
+    'Edad'].mean()
