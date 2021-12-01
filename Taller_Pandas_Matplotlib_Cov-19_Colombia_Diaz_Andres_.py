@@ -138,3 +138,8 @@ recuperados.groupby(['Nombre municipio']).size(
 print('Lista agrupada de departamentos y ciudades con  mas contagios '
       '(mayor a menor)')
 data.groupby('Nombre departamento')['Nombre municipio'].value_counts()
+
+# 18. Número de Mujeres y hombres contagiados por ciudad por departamento
+
+print('Número de Mujeres y hombres contagiados por ciudad por departamento')
+data.groupby(['Sexo', 'Nombre departamento', 'Nombre municipio']).size()
