@@ -37,3 +37,12 @@ print(f'Número de casos de contagiados en el país: {data.shape[0]}')
 
 numero_municipios_afectados = len(data['Nombre municipio'].value_counts())
 print(f'Número de municipios afectados: {numero_municipios_afectados}')
+
+# 3. Liste los municipios afectados (sin repetirlos)
+
+nombre_municipios = data['Nombre municipio'].unique()
+count = 0
+print('Lista de municipios afectados (sin repeticiones)')
+for municipio in nombre_municipios:
+    count += 1
+    print(f'#{count}. {municipio}')
