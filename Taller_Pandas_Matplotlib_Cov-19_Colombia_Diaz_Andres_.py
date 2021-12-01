@@ -161,3 +161,21 @@ data['Nombre del país'].value_counts()
 
 print('Fechas con mayor contagio (De mayor a menor)')
 data['Fecha de notificación'].value_counts()
+
+# 22. Diga cual es la tasa de mortalidad y recuperación que tiene toda
+# Colombia
+
+# Tasa mortalidad = 1000 *  No. personas fallecidas/No. personas contagiadas
+# Tasa recuperación = 1000 * No. personas recuperadas/No. personas contagiadas
+
+contagiados = data.shape[0]
+fallecidos = data[data.Estado == 'Fallecido'].shape[0]
+recuperados = data[data['Recuperado'] == 'Recuperado'].shape[0]
+tasa_mortalidad = 0
+tasa_recuperacion = 0
+
+tasa_mortalidad = (fallecidos/contagiados) * 1000
+tasa_recuperacion = (recuperados/contagiados) * 1000
+
+print(f'Tasa de mortalidad en Colombia: {tasa_mortalidad}')
+print(f'Tasa de recuperación en Colombia: {tasa_recuperacion}')
