@@ -264,3 +264,10 @@ fallecidos_top_10_ciudad = data[data['Recuperado'] == 'fallecido'].groupby(
 print('Gráfica: Curva de recuperados en los 10 ciudades con mas recuperados')
 recuperados_top_10_ciudad = data[data['Recuperado'] == 'Recuperado'].groupby(
     'Nombre municipio').size().sort_values(ascending=False).head(10).plot()
+
+# 30.  Liste de mayor a menor la cantidad de fallecidos por edad en toda
+# Colombia.
+
+fallecidos_edad = data[data['Recuperado'] == 'fallecido'].groupby(
+    'Edad').size().sort_values(ascending=False)
+print(f'Fallecidos por edad (Mayor a menor): {fallecidos_edad}')
