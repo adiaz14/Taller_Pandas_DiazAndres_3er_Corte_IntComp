@@ -46,3 +46,9 @@ print('Lista de municipios afectados (sin repeticiones)')
 for municipio in nombre_municipios:
     count += 1
     print(f'#{count}. {municipio}')
+
+# 4. Número de personas que se encuentran en atención en casa
+
+data['Ubicación del caso'].value_counts()
+casos_casa = data[data['Ubicación del caso'] == 'Casa'].shape[0]
+print(f'Número de personas con atención en casa: {casos_casa}')
