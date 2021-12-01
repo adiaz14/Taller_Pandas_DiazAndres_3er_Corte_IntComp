@@ -192,3 +192,14 @@ print(f'Lista de tasa de mortalidad por departamento: '
       f'{tasa_mortalidad_depart} \n')
 print(f'Lista de tasa de recuperación por departamento: '
       f'{tasa_recuperacion_depart}')
+
+# 24. Liste la tasa de mortalidad y recuperación que tiene cada ciudad
+
+tasa_mortalidad_municipio = (data[data['Recuperado'] == 'fallecido'].groupby(
+    'Nombre municipio').size() / len(data)) * 100
+
+tasa_recuper_municipio = (data[data['Recuperado'] == 'Recuperado'].groupby(
+    'Nombre municipio').size() / len(data)) * 100
+
+print(f'Lista de tasa de mortalidad por ciudad: {tasa_mortalidad_municipio}')
+print(f'\n Lista de tasa de recuperación por ciudad: {tasa_recuper_municipio}')
